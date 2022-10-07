@@ -34,63 +34,67 @@ function createAnimation(name, animation) {
     }
 }
 
-createAnimation("crash", (element, timeout) => {
-    element.animate(50, 0, 'now').rotate(20)
+// Create animations for all different cymbols and drums
+{
+    createAnimation("crash", (element, timeout) => {
+        element.animate(50, 0, 'now').rotate(20)
 
-    timeout(50, () => {
-        element.animate(600, 0, 'now').rotate(-20)
+        timeout(50, () => {
+            element.animate(600, 0, 'now').rotate(-20)
+        })
     })
-})
-createAnimation("ride", (element, timeout) => {
-    element.animate(50, 0, 'now').rotate(-15)
+    createAnimation("ride", (element, timeout) => {
+        element.animate(50, 0, 'now').rotate(-15)
 
-    timeout(50, () => {
-        element.animate(1500, 0, 'now').rotate(15)
+        timeout(50, () => {
+            element.animate(1500, 0, 'now').rotate(15)
+        })
     })
-})
-createAnimation("medium-tom", (element, timeout) => {
-    element.animate(50, 0, 'now').rotate(15, 329, 251)
+    createAnimation("medium-tom", (element, timeout) => {
+        element.animate(50, 0, 'now').rotate(15, 329, 251)
 
-    timeout(50, () => {
-        element.animate(300, 0, 'now').rotate(-15, 329, 251)
+        timeout(50, () => {
+            element.animate(300, 0, 'now').rotate(-15, 329, 251)
+        })
     })
-})
-createAnimation("high-tom", (element, timeout) => {
-    element.animate(50, 0, 'now').rotate(-15, 260, 251)
+    createAnimation("high-tom", (element, timeout) => {
+        element.animate(50, 0, 'now').rotate(-15, 260, 251)
 
-    timeout(50, () => {
-        element.animate(300, 0, 'now').rotate(15, 260, 251)
+        timeout(50, () => {
+            element.animate(300, 0, 'now').rotate(15, 260, 251)
+        })
     })
-})
-createAnimation("snare", (element, timeout) => {
-    element.animate(50, 0, 'now').scale(1.1, 0.9)
+    createAnimation("snare", (element, timeout) => {
+        element.animate(50, 0, 'now').scale(1.1, 0.9)
 
-    timeout(50, () => {
-        element.animate(200, 0, 'now').scale(1 / 1.1, 1 / 0.9)
+        timeout(50, () => {
+            element.animate(200, 0, 'now').scale(1 / 1.1, 1 / 0.9)
+        })
     })
-})
-createAnimation("floor-tom", (element, timeout) => {
-    element.animate(50, 0, 'now').scale(1.02, 0.95, 177, 378)
+    createAnimation("floor-tom", (element, timeout) => {
+        element.animate(50, 0, 'now').scale(1.02, 0.95, 177, 378)
 
-    timeout(50, () => {
-        element.animate(200, 0, 'now').scale(1 / 1.02, 1 / 0.95, 177, 378)
+        timeout(50, () => {
+            element.animate(200, 0, 'now').scale(1 / 1.02, 1 / 0.95, 177, 378)
+        })
     })
-})
-createAnimation("bass-drum", (element, timeout) => {
-    element.animate(50, 0, 'now').scale(1.03, 1.03)
+    createAnimation("bass-drum", (element, timeout) => {
+        element.animate(50, 0, 'now').scale(1.03, 1.03)
 
-    timeout(50, () => {
-        element.animate(100, 0, 'now').scale(1 / 1.03, 1 / 1.03)
+        timeout(50, () => {
+            element.animate(100, 0, 'now').scale(1 / 1.03, 1 / 1.03)
+        })
     })
-})
-createAnimation("hi-hat", (element, timeout) => {
-    element.animate(50, 0, 'now').scale(1, 0.4, 518, 207)
+    createAnimation("hi-hat", (element, timeout) => {
+        element.animate(50, 0, 'now').scale(1, 0.4, 518, 207)
 
-    timeout(50, () => {
-        element.animate(100, 0, 'now').scale(1, 1 / 0.4, 518, 207)
+        timeout(50, () => {
+            element.animate(100, 0, 'now').scale(1, 1 / 0.4, 518, 207)
+        })
     })
-})
+}
 
+// Add event listeners for all different buttons
 for (let sound of sounds) {
     let button = document.getElementById(sound)
 
