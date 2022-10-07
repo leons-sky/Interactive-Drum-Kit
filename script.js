@@ -94,6 +94,11 @@ function createAnimation(name, animation) {
     })
 }
 
+if ('ontouchstart' in document.documentElement) {
+    let controls = document.getElementById("controls")
+    controls.style.display = "none"
+}
+
 // Add event listeners for all different buttons
 for (let sound of sounds) {
     let button = document.getElementById(sound)

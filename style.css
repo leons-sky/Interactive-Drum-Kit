@@ -14,8 +14,14 @@ h1 {
 	user-select: none;
 }
 
+section {
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
 #drumkit {
 	position: relative;
+	padding: 0;
 	display: block;
 	aspect-ratio: 1 / 1;
 	width: 50%;
@@ -152,9 +158,8 @@ h1 {
 }
 
 #controls {
-	margin-top: -5vw;
-	padding-left: 5vw;
-	padding-right: 5vw;
+	/* margin-top: -5vw; */
+	padding-bottom: 5rem;
 }
 
 footer {
